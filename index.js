@@ -45,8 +45,8 @@ fs.readdirSync(routesPath).forEach(function (file) {
 
 
 //listening the server - creating a local server
-app.listen(appConfig.port, () => {
-    console.log('Example app listening on port 3000!');
+app.listen(process.env.PORT, () => {
+    console.log('Example app listening on PORT!');
     //creating the mongo db connection here
     let db = mongoose.connect(appConfig.db.uri);
 
