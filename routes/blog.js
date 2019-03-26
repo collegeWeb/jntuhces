@@ -1,6 +1,7 @@
 const express = require('express')
 const newsController = require('../controllers/newsController')
 const facultyController = require('../controllers/facultyController')
+const notifsController = require('../controllers/notifsController')
 const appConfig = require("./../config/appConfig")
 
 
@@ -26,6 +27,10 @@ let setRouter = (app) => {
     app.post(baseUrl+'/news/create',newsController.createNews);
 
     app.post(baseUrl+'/faculty/create',facultyController.createFaculty);
+
+    app.post(baseUrl+'/notifications',notifsController.addPushSubscriber);
+
+    app.post(baseUrl+'/newsletter',notifsController.sendNewsletter);
 
     //app.get(baseUrl+'/:blogId/count/view',blogController.increaseBlogView);
 
