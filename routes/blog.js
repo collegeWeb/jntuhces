@@ -7,6 +7,10 @@ const appConfig = require("./../config/appConfig")
 
 let setRouter = (app) => {
     let baseUrl = appConfig.apiVersion;
+    
+    app.get('/', function (req, res) {
+    res.send('Hello! This App is for JNTUHCES. Contact Administrator for more routes. Admin:Surya(9494391985)')
+    })
 
     app.get(baseUrl+'/news/all',newsController.getAllNews);
 
