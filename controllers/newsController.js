@@ -27,7 +27,7 @@ let getAllNews = (req, res) => {
  * function to delete the assignment collection.
  */
 let deleteNews = (req, res) => {
-    NewsModel.deleteOne({ 'listId': req.params.blogId }, (err, result) => {
+    NewsModel.deleteOne({ 'listId': req.params.listId }, (err, result) => {
         if (err) {
             console.log(err)
             res.send(err)
