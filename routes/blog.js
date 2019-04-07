@@ -2,6 +2,7 @@ const express = require('express')
 const newsController = require('../controllers/newsController')
 const facultyController = require('../controllers/facultyController')
 const notifsController = require('../controllers/notifsController')
+const imageController = require('../controllers/imageController')
 const appConfig = require("./../config/appConfig")
 
 
