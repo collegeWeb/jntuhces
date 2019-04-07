@@ -17,6 +17,14 @@ let setRouter = (app) => {
     app.get(baseUrl+'/faculty/principal',facultyController.getPrincipalInfo);
 
     app.get(baseUrl+'/faculty/viceprincipal',facultyController.getVicePrincipalInfo);
+    
+    app.get(baseUrl + 'faculty/cse', facultyController.getCseFacultyInfo);
+
+    app.get(baseUrl + 'faculty/ece', facultyController.getEceFacultyInfo);
+
+    app.get(baseUrl + 'faculty/cee', facultyController.getCeeFacultyInfo);
+
+    app.get(baseUrl + 'faculty/msnt', facultyController.getMsntFacultyInfo);
 
     //app.get(baseUrl+'/view/:blogId',blogController.viewByBlogId);
 
