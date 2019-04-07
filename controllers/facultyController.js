@@ -132,8 +132,7 @@ let createFaculty = (req, res) => {
 }
 
 let deleteFaculty = (req, res) => {
-    let name = decodeURIComponent(req.params.name);
-    NewsModel.deleteOne({ 'name': name }, (err, result) => {
+    FacultyModel.deleteOne({ 'name': req.params.name }, (err, result) => {
         if (err) {
             console.log(err)
             res.send(err)
