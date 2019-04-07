@@ -131,6 +131,21 @@ let createFaculty = (req, res) => {
     }) // end new blog save
 }
 
+let deleteFaculty = (req, res) => {
+    NewsModel.deleteOne({ 'name': req.params.name }, (err, result) => {
+        if (err) {
+            console.log(err)
+            res.send(err)
+        } else if (result == undefined || result == null || result == '') {
+            console.log('No Faculty Found')
+            res.send("No Faculty Found")
+        } else {
+            res.send(result)
+
+        }
+    })
+}
+
 module.exports = {
     getPrincipalInfo: getPrincipalInfo,
     createFaculty: createFaculty,
@@ -138,5 +153,6 @@ module.exports = {
     getCseFacultyInfo: getCseFacultyInfo,
     getEceFacultyInfo: getEceFacultyInfo,
     getCeeFacultyInfo: getCeeFacultyInfo,
-    getMsntFacultyInfo: getMsntFacultyInfo
+    getMsntFacultyInfo: getMsntFacultyInfo,
+    deleteFaculty: deleteFaculty
 }
