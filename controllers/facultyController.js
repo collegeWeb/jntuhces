@@ -132,6 +132,7 @@ let createFaculty = (req, res) => {
 }
 
 let deleteFaculty = (req, res) => {
+    console.log(req.params.name);
     FacultyModel.deleteOne({ 'name': req.params.name }, (err, result) => {
         if (err) {
             console.log(err)
