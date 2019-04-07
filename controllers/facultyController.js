@@ -36,6 +36,70 @@ let getVicePrincipalInfo = (req, res) => {
         })
 }// end get all blogs
 
+let getCseFacultyInfo = (req, res) => {
+    FacultyModel.find({tag: 'cse'})
+        .lean()
+        .exec((err, result) => {
+            if (err) {
+                console.log(err)
+                res.send(err)
+            } else if (result == undefined || result == null || result == '') {
+                console.log('No CSE Faculty Details Found')
+                res.send("No CSE Faculty Details Found")
+            } else {
+                res.send(result)
+            }
+        })
+}// end get all blogs
+
+let getEceFacultyInfo = (req, res) => {
+    FacultyModel.find({tag: 'ece'})
+        .lean()
+        .exec((err, result) => {
+            if (err) {
+                console.log(err)
+                res.send(err)
+            } else if (result == undefined || result == null || result == '') {
+                console.log('No ECE Faculty Details Found')
+                res.send("No ECE Faculty Details Found")
+            } else {
+                res.send(result)
+            }
+        })
+}// end get all blogs
+
+let getCeeFacultyInfo = (req, res) => {
+    FacultyModel.find({tag: 'cee'})
+        .lean()
+        .exec((err, result) => {
+            if (err) {
+                console.log(err)
+                res.send(err)
+            } else if (result == undefined || result == null || result == '') {
+                console.log('No CEE Faculty Details Found')
+                res.send("No CEE Faculty Details Found")
+            } else {
+                res.send(result)
+            }
+        })
+}// end get all blogs
+
+let getMsntFacultyInfo = (req, res) => {
+    FacultyModel.find({tag: 'msnt'})
+        .lean()
+        .exec((err, result) => {
+            if (err) {
+                console.log(err)
+                res.send(err)
+            } else if (result == undefined || result == null || result == '') {
+                console.log('No MSNT Faculty Details Found')
+                res.send("No MSNT Faculty Details Found")
+            } else {
+                res.send(result)
+            }
+        })
+}// end get all blogs
+
 /**
  * function to create the blog.
  */
@@ -70,5 +134,9 @@ let createFaculty = (req, res) => {
 module.exports = {
     getPrincipalInfo: getPrincipalInfo,
     createFaculty: createFaculty,
-    getVicePrincipalInfo: getVicePrincipalInfo
+    getVicePrincipalInfo: getVicePrincipalInfo,
+    getCseFacultyInfo: getCseFacultyInfo,
+    getEceFacultyInfo: getEceFacultyInfo,
+    getCeeFacultyInfo: getCeeFacultyInfo,
+    getMsntFacultyInfo: getMsntFacultyInfo
 }
