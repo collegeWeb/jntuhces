@@ -32,9 +32,9 @@ let setRouter = (app) => {
 
     //app.get(baseUrl+'/view/by/category/:category',blogController.viewByCategory);
 
-    app.post(baseUrl+'/:listId/delete',newsController.deleteNews);
-    
-    app.post(baseUrl + '/:name/delete', facultyController.deleteFaculty);
+    app.post(baseUrl + '/news/:listId/delete', newsController.deleteNews);
+
+    app.post(baseUrl + '/faculty/:name/delete', facultyController.deleteFaculty);
 
     //app.put(baseUrl+'/:blogId/edit',blogController.editBlog);
 
