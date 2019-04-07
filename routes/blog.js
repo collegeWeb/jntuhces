@@ -25,6 +25,14 @@ let setRouter = (app) => {
     app.get(baseUrl + '/faculty/cee', facultyController.getCeeFacultyInfo);
 
     app.get(baseUrl + '/faculty/msnt', facultyController.getMsntFacultyInfo);
+    
+    app.get(baseUrl + '/images/cse', imageController.getCseImages);
+
+    app.get(baseUrl + '/images/ece', imageController.getEceImages);
+
+    app.get(baseUrl + '/images/cee', imageController.getCeeImages);
+
+    app.get(baseUrl + '/images/msnt', imageController.getMsntImages);
 
     //app.get(baseUrl+'/view/:blogId',blogController.viewByBlogId);
 
@@ -35,12 +43,16 @@ let setRouter = (app) => {
     app.post(baseUrl + '/news/:listId/delete', newsController.deleteNews);
 
     app.post(baseUrl + '/faculty/:name/delete', facultyController.deleteFaculty);
+    
+    app.post(baseUrl + '/image/:imageId/delete', imageController.deleteImage);
 
     //app.put(baseUrl+'/:blogId/edit',blogController.editBlog);
 
     app.post(baseUrl+'/news/create',newsController.createNews);
 
     app.post(baseUrl+'/faculty/create',facultyController.createFaculty);
+    
+    app.post(baseUrl + '/image/create', imageController.createImage);
 
     app.post(baseUrl+'/notifications',notifsController.addPushSubscriber);
 
