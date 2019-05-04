@@ -72,8 +72,8 @@ let sendNewsletter = (req, res) => {
     // sample notification payload
     const notificationPayload = {
         "notification": {
-            "title": "Angular News",
-            "body": "Newsletter Available!",
+            "title": "External Project Viva CSE",
+            "body": "Happening at CSE HOD Office",
             "icon": "assets/main-page-logo-small-hat.png",
             "vibrate": [100, 50, 100],
             "data": {
